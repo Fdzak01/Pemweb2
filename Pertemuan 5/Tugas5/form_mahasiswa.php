@@ -6,11 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahasiswa</title>
-</head>
-<body>
-    <h1>Form Nilai Ujian</h1><hr>
 
-    <form action="" method="POST">
+    <style>
+        .center{
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body >
+    <h1>Form Nilai Ujian</h1><hr>
+<div  >
+    <form action="" method="POST" class="form">
         <div>
             <label for="nim">NIM</label>
             <input type="number" name="nim" id="nim" required>
@@ -27,6 +36,7 @@
             <button type="submit" name="submit">Hasil</button>
         </div>
     </form>
+</div>
 
     <?php 
 
