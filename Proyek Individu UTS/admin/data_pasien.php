@@ -1,26 +1,32 @@
 <?php
 require_once("koneksi.php");
-
-$query = "SELECT pasien.*, kelurahan.nama AS nama_kelurahan
-          FROM pasien
-          LEFT JOIN kelurahan ON pasien.kelurahan_id = kelurahan.id_kelurahan";
-
+require_once 'navbar.html';
+require_once 'sidebar.html';
+$query = "SELECT pasien. *, kelurahan.nama as nama_kelurahan
+            FROM pasien
+            LEFT JOIN kelurahan ON pasien.kelurahan_id = kelurahan.id_kelurahan";
 $pasiens = $dbh->query($query);
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Pasien Puskesmas Sukahati</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+    .body{
+        font-family : Helvetica, sans-serif
+    }
+    </style>
+
 </head>
-<body>
+<body class="body">
     <div class="container">
-        <h2>Data Pasien Puskesmas Sukahati</h2>
-        <table class="table table-bordered">
-            <tr class="table-warning">
+        <h2 style="padding : 10px ;">Data Pasien</h2>
+        <a style="padding : 10px" href="create.php" class="btn btn-primary">Tambah Data Pasien</a>
+        <table class="table table_bordered table_stripped">
+            <tr class="table-success ">
                 <th>No</th>
                 <th>Kode Pasien</th>
                 <th>Nama</th>
@@ -32,7 +38,7 @@ $pasiens = $dbh->query($query);
             </tr>
             <?php 
             $no = 1;
-            foreach ($pasiens as $pasien) { ?>
+            foreach($pasiens as $pasien){ ?>
             <tr>
                 <td><?= $no++; ?></td>
                 <td><?= $pasien['kode']; ?></td>
@@ -42,9 +48,8 @@ $pasiens = $dbh->query($query);
                 <td><?= $pasien['tgl_lahir']; ?></td>
                 <td><?= $pasien['nama_kelurahan']; ?></td>
                 <td>
-                    <a href="Create.php" class="btn btn-primary">Create</a>
-                    <a href="edit.php" class="btn btn-primary">Edit</a>
-                    <a href="proses.php" class="btn btn-danger">Hapus</a>
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
             <?php } ?>
@@ -52,3 +57,7 @@ $pasiens = $dbh->query($query);
     </div>
 </body>
 </html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<?php require_once 'footer.html';
+?>
