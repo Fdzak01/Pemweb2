@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2024 pada 04.04
+-- Waktu pembuatan: 01 Apr 2024 pada 02.39
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -33,19 +33,11 @@ CREATE TABLE `dokter` (
   `gender` char(1) DEFAULT NULL,
   `tmp_lahir` varchar(30) DEFAULT NULL,
   `tgl_lahir` date DEFAULT NULL,
-  `kategori` enum('Umum','Spesialis','Bidan','Doketer Gigi','Anestesi','Bedah','Genikolog') DEFAULT NULL,
+  `kategori` enum('Umum','Spesialis','Gizi','Bidan','Gigi') DEFAULT NULL,
   `telpon` varchar(20) DEFAULT NULL,
-  `alamat` varchar(20) DEFAULT NULL,
+  `alamat` varchar(100) DEFAULT NULL,
   `unit_kerja_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `dokter`
---
-
-INSERT INTO `dokter` (`id`, `nama`, `gender`, `tmp_lahir`, `tgl_lahir`, `kategori`, `telpon`, `alamat`, `unit_kerja_id`) VALUES
-(1, 'Rafka', 'L', 'Bogor', '2003-09-27', 'Bedah', '081317234683', 'jakarta', NULL),
-(2, 'Natasha', 'P', 'Bogor', '2000-07-25', 'Umum', '0814223456', 'jakarta', NULL);
 
 -- --------------------------------------------------------
 
@@ -115,13 +107,6 @@ CREATE TABLE `periksa` (
   `dokter_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data untuk tabel `periksa`
---
-
-INSERT INTO `periksa` (`id`, `tanggal`, `berat`, `tinggi`, `tensi`, `keterangan`, `pasien_id`, `dokter_id`) VALUES
-(1, '2024-04-20', 65.5, 170, '120/80', 'Normal checkup', 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -176,7 +161,7 @@ ALTER TABLE `unit_kerja`
 -- AUTO_INCREMENT untuk tabel `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `kelurahan`
@@ -194,7 +179,7 @@ ALTER TABLE `pasien`
 -- AUTO_INCREMENT untuk tabel `periksa`
 --
 ALTER TABLE `periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `unit_kerja`
