@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function index(){
-        return view('admin.index');
+    public function about(){
+        return view('admin.about');
     }
 
 }

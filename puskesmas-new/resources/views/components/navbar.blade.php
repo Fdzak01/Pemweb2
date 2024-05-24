@@ -13,6 +13,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/about" class="nav-link">About</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/service" class="nav-link">Service</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
