@@ -2,7 +2,7 @@
     <x-slot name="page_name">Halaman Pasien</x-slot>
     <x-slot name="page_content">
         <table class ="table table-bordered">
-            <tr class = "table-success">
+            <tr class = "table-info">
                 <th>Id</th>
                 <th>Kode</th>
                 <th>Nama</th>

@@ -36,8 +36,8 @@ Route::get('/service',[ServiceController::class,'service']);
 
 // Praktikum Laravel 3
 
-Route::get('/dashboard/kelurahan' ,[KelurahanController::class, 'index']);
+Route::get('/kelurahan' ,[KelurahanController::class, 'index']);
 
 //Tugas Laravel 3
 
-Route::get('dashboard/pasien',[PasienController::class, 'index']);
+Route::get('/pasien',[PasienController::class, 'index']);

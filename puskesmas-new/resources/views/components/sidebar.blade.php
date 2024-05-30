@@ -13,7 +13,7 @@
           <img src="../admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Admin Kita</a>
         </div>
       </div>
 
@@ -39,7 +39,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
+                {{-- <i class="right fas fa-angle-left"></i> --}}
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -52,21 +52,21 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="dashboard/kelurahan" class="nav-link">
+            <a href="/kelurahan" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Kelurahan
-                <span class="right badge badge-danger">New</span>
+                {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="dashboard/pasien" class="nav-link">
+            <a href="/pasien" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Pasien
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                {{-- <i class="fas fa-angle-left right"></i> --}}
+                {{-- <span class="badge badge-info right">6</span> --}}
               </p>
             </a>
             <!-- <ul class="nav nav-treeview">
