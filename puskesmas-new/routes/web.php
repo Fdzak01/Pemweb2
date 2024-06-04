@@ -40,4 +40,20 @@ Route::get('/kelurahan' ,[KelurahanController::class, 'index']);
 
 //Tugas Laravel 3
 
-Route::get('/pasien',[PasienController::class, 'index']);
+Route::get('pasien',[PasienController::class, 'index']);
+
+// Praktikum Laravel 4
+
+Route::get('kelurahan/create',[KelurahanController::class,'create']);
+
+Route::post('kelurahan/store',[KelurahanController::class,'store']);
+
+Route::get('kelurahan/show/{id}', [KelurahanController::class,'show']);
+
+//Tugas laravel 4
+
+Route::get('pasien/create',[PasienController::class,'create']);
+
+Route::post('pasien/store',[PasienController::class,'store']);
+
+Route::get('pasien/show/{id}', [PasienController::class,'show']);
