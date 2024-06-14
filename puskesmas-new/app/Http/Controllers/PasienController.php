@@ -30,7 +30,7 @@ class PasienController extends Controller
     public function store(Request $request)
     {
         //Validasi Form Input
-        $validate = $request->validate([
+        $validated = $request->validate([
             'kode' => 'required|string',
             'nama' => 'required|string',
             'tmp_lahir' => 'required|string',
@@ -43,11 +43,11 @@ class PasienController extends Controller
 
         //Setelah divalidasi, kemudian menyimpan data
 
-        Pasien::create($validate);  
+        Pasien::create($validated);  
 
         //Kemudian Berpindah Halaman
 
-        return redirect('/pasien');
+        return redirect('/pasien')->with('Create','Data Berhasil di tambahkan');
 
     }
 
@@ -70,7 +70,8 @@ class PasienController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pasien = Pasien::find($id);
+        return view('admin.pasien.edit', compact('pasien'));
     }
 
     /**
@@ -78,7 +79,27 @@ class PasienController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+                //Validasi Form Input
+                $validated = $request->validate([
+                    'kode' => 'required|string',
+                    'nama' => 'required|string',
+                    'tmp_lahir' => 'required|string',
+                    'tgl_lahir' => 'required|date',
+                    'gender'=> 'required',
+                    'email' => 'required|string',
+                    'alamat' => 'required',
+                    'kecamatan_nama' => 'required|string',
+                ]);
+        
+                //Setelah divalidasi, kemudian mengambil atau menyimpan data
+        
+                $pasien = pasien::find($id);
+        
+                //kemudian melanjutkan dengan mengirim/mengupdate data
+        
+                $pasien->update($validated);
+
+                return redirect('/pasien')->with('Update','Data Berhasil di perbarui');
     }
 
     /**
@@ -86,6 +107,9 @@ class PasienController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pasien = Pasien::find($id);
+        $pasien->delete();
+
+        return redirect('pasien')->with('Delete','Data Berhasil di hapus');
     }
 }

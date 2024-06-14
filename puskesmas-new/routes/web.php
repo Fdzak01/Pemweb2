@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\KelurahanController;
 use App\Http\Controllers\PasienController;
+use Mockery\Generator\StringManipulation\Pass\Pass;
 
 Route::get('/', function () {
     return view('welcome');
@@ -57,3 +58,17 @@ Route::get('pasien/create',[PasienController::class,'create']);
 Route::post('pasien/store',[PasienController::class,'store']);
 
 Route::get('pasien/show/{id}', [PasienController::class,'show']);
+
+//Praktikum Laravel 5
+Route::get('kelurahan/edit/{id}',[KelurahanController::class,'edit']);
+
+Route::put('kelurahan/update/{id}',[KelurahanController::class,'update']);
+
+Route::delete('kelurahan/destroy/{id}',[KelurahanController::class,'destroy']);
+
+//Tugas Laravel 5
+Route::get('pasien/edit/{id}',[PasienController::class,'edit']);
+
+Route::put('pasien/update/{id}',[PasienController::class,'update']);
+
+Route::delete('pasien/destroy/{id}',[PasienController::class,'destroy']);
